@@ -28,13 +28,10 @@ class SymptomsImages extends StatelessWidget {
           children: List.generate(
             covidImages.length,
                 (index) => InkWell(
-              child: Hero(
-                tag: 'HeroImg',
-                child: Image.asset(
-                  '${covidImages[index]}',
-                  fit: BoxFit.cover,
-                  height: 300.0,
-                ),
+              child: Image.asset(
+                '${covidImages[index]}',
+                fit: BoxFit.cover,
+                height: 300.0,
               ),
               onTap: () {
                 Navigator.push(

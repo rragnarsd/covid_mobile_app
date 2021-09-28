@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/screens/countries_screen.dart';
 import 'package:flutter_covid_app/screens/prevention_screen.dart';
+import 'package:flutter_covid_app/screens/statistic_screen.dart';
 import 'package:flutter_covid_app/screens/symptoms_screen.dart';
 import 'package:flutter_covid_app/widgets/grid_card.dart';
 import 'package:flutter_covid_app/widgets/requirement_circles.dart';
@@ -72,7 +74,13 @@ class HomePage extends StatelessWidget {
                   color: colors[2],
                   hedText: 'Statistics',
                   subHed: 'Data related to the disease',
-                  function: () => {},
+                  function: () => {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const StatisticScreen(),
+                      ),
+                    )
+                  },
                 ),
                 const SizedBox(
                   width: 20.0,
@@ -82,7 +90,13 @@ class HomePage extends StatelessWidget {
                   color: colors[3],
                   hedText: 'Countries',
                   subHed: 'Infected countries by COVID-19',
-                  function: () => {},
+                  function: () => {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const CountriesScreen(),
+                      ),
+                    )
+                  },
                 ),
               ],
             ),
