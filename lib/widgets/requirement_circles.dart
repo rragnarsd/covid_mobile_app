@@ -7,7 +7,7 @@ class RequirementCircles extends StatelessWidget {
   final Color color;
   final String text;
 
-  RequirementCircles({Key? key, required this.icon, required this.color, required this.text})
+  const RequirementCircles({Key? key, required this.icon, required this.color, required this.text})
       : super(key: key);
 
   @override

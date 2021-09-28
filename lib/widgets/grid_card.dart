@@ -6,9 +6,10 @@ class GridCard extends StatelessWidget {
   final String hedText;
   final String subHed;
   final IconData icon;
+  final Function function;
 
   const GridCard({
-    Key? key, required this.color, required this.hedText, required this.subHed, required this.icon
+    Key? key, required this.color, required this.hedText, required this.subHed, required this.icon, required this.function
   }) : super(key: key,);
 
   @override
@@ -52,7 +53,7 @@ class GridCard extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () {},
+      onTap: () => function(),
     );
   }
 }
