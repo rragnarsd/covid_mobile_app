@@ -10,17 +10,14 @@ class PreventionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Prevention',
-          style: TextStyle(color: Colors.black),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -34,7 +31,8 @@ class PreventionScreen extends StatelessWidget {
                             hedText: 'Avoid contact with sick people',
                             subText:
                                 'Maintain at least a 1-metre distance between other people. Maintain an even greater distance between yourself and others when indoors. The further away, the better.',
-                            icon: Icons.sick),
+                            icon: Icons.sick,
+                        ),
                         ExpansionTileList(
                           hedText: 'Wash your hands with soap',
                           subText:
