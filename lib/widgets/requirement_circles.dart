@@ -13,7 +13,7 @@ class RequirementCircles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      RawMaterialButton(
+      RawMaterialButton(elevation: 5.0,
         shape: const CircleBorder(),
         fillColor: color,
         child: Padding(

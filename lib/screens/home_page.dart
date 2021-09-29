@@ -3,6 +3,7 @@ import 'package:flutter_covid_app/screens/countries_screen.dart';
 import 'package:flutter_covid_app/screens/prevention_screen.dart';
 import 'package:flutter_covid_app/screens/statistic_screen.dart';
 import 'package:flutter_covid_app/screens/symptoms_screen.dart';
+import 'package:flutter_covid_app/widgets/app_header.dart';
 import 'package:flutter_covid_app/widgets/grid_card.dart';
 import 'package:flutter_covid_app/widgets/requirement_circles.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,9 +20,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 100.0,
-            ),
+         const AppHeader(image: 'assets/vector/vaccine.png'),
             const Text(
               'Prevent COVID-19',
               style: TextStyle(fontSize: 25.0),
@@ -103,8 +102,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            const Divider(
-              color: Colors.teal,
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Divider(color: Colors.teal, thickness: 1.0),
             ),
             Column(
               children: [

@@ -28,7 +28,15 @@ class SymptomsImages extends StatelessWidget {
               (index) => InkWell(
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 0.5, color: Colors.blue)
+                border: Border.all(width: 0.5, color: Colors.blue),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 10,
+                      offset: const Offset(3, 0),
+                    ),
+                  ]
               ),
               child: Image.asset(
                 '${covidImages[index]}',
