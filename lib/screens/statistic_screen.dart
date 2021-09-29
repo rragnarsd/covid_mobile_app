@@ -1,8 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/models/covid_worldwide.dart';
-import 'package:flutter_covid_app/service/api_service.dart';
 import 'package:flutter_covid_app/widgets/covid_case_card.dart';
+import 'package:http/http.dart' as http;
 
 class StatisticScreen extends StatefulWidget {
   const StatisticScreen({Key? key}) : super(key: key);
@@ -12,12 +14,22 @@ class StatisticScreen extends StatefulWidget {
 }
 
 class _StatisticScreenState extends State<StatisticScreen> {
-  late Future<CovidWorldWide> jsonData;
+  Future<CovidWorldWide>? _allCovidCases;
+
+  Future<CovidWorldWide> fetchCovid() async {
+    final response =
+    await http.get(Uri.parse('https://disease.sh/v3/covid-19/all'));
+    if (response.statusCode == 200) {
+      return CovidWorldWide.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
 
   @override
   void initState() {
-    jsonData = APIService().fetchCovid();
     super.initState();
+    _allCovidCases = fetchCovid();
   }
 
   @override
@@ -33,7 +45,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
           child: Container(
             color: Colors.blue.shade900,
             child: FutureBuilder<CovidWorldWide>(
-              future: jsonData,
+              future: _allCovidCases,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return Padding(

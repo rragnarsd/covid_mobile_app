@@ -13,7 +13,7 @@ class CovidCaseCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(5.0),
         child: Container(
           color: Colors.blue,
           width: MediaQuery.of(context).size.width / 2.5,

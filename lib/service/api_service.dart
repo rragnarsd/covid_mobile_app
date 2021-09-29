@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class APIService {
 
-  Future<CovidWorldWide> fetchCovid() async {
+/*  Future<CovidWorldWide> fetchCovid() async {
     final response =
     await http.get(Uri.parse('https://disease.sh/v3/covid-19/all'));
     if (response.statusCode == 200) {
@@ -15,7 +15,7 @@ class APIService {
     } else {
       throw Exception('Failed to load data');
     }
-  }
+  }*/
 
   Future<CovidVaccine> fetchVaccine() async {
     final response = await http.get(Uri.parse(
@@ -27,7 +27,7 @@ class APIService {
     }
   }
 
-  Future<Country> fetchAllCountries() async {
+ /* Future<Country> fetchAllCountries() async {
     final response =
     await http.get(Uri.parse('https://disease.sh/v3/covid-19/countries'));
     if (response.statusCode == 200) {
@@ -35,5 +35,5 @@ class APIService {
     } else {
       throw Exception('Failed to load data');
     }
-  }
+  }*/
 }

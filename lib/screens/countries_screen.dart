@@ -86,7 +86,8 @@ class _CountriesScreenState extends State<CountriesScreen> {
                                               left: 20.0,
                                               top: 100,
                                               right: 20.0,
-                                              bottom: 20.0),
+                                              bottom: 20.0,
+                                          ),
                                           margin: EdgeInsets.only(top: 50.0),
                                           decoration: BoxDecoration(
                                               shape: BoxShape.rectangle,
