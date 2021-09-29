@@ -216,7 +216,7 @@ class SymptomsScreen extends StatelessWidget {
                           _launchURL();
                         },
                         child: const Text(
-                          'View All',
+                          'View More',
                           style: TextStyle(
                             fontSize: 18.0,
                           ),
