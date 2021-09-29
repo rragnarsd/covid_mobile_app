@@ -9,7 +9,7 @@ class SymptomsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Symptoms'),
+        title: const Text('Symptoms'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -51,7 +51,7 @@ class SymptomsScreen extends StatelessWidget {
                             text: TextSpan(children: [
                               TextSpan(
                                   text: String.fromCharCode(0x2022),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   children: const [
@@ -66,7 +66,7 @@ class SymptomsScreen extends StatelessWidget {
                                   ]),
                               TextSpan(
                                   text: String.fromCharCode(0x2022),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   children: const [
@@ -80,7 +80,7 @@ class SymptomsScreen extends StatelessWidget {
                                   ]),
                               TextSpan(
                                   text: String.fromCharCode(0x2022),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   children: const [
@@ -119,7 +119,7 @@ class SymptomsScreen extends StatelessWidget {
                             text: TextSpan(children: [
                               TextSpan(
                                   text: String.fromCharCode(0x2022),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   children: const [
@@ -133,7 +133,7 @@ class SymptomsScreen extends StatelessWidget {
                                   ]),
                               TextSpan(
                                   text: String.fromCharCode(0x2022),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   children: const [

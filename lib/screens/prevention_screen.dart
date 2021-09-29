@@ -54,31 +54,28 @@ class PreventionScreen extends StatelessWidget {
             const SizedBox(
               height: 20.0,
             ),
-            Container(
-             /* color: Colors.blue.shade200,*/
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 20.0, horizontal: 20.0,
-                ),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/vector/vaccine.png',
-                      width: MediaQuery.of(context).size.width / 1.5,
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 20.0, horizontal: 20.0,
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/vector/vaccine.png',
+                    width: MediaQuery.of(context).size.width / 1.5,
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  const Text(
+                    'Stay safe by taking simple precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated, avoiding crowds, cleaning your hands more often, and coughing into a bent elbow or tissue. Check local advice where you live and work.',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      height: 1.2,
+                      color: Colors.black, letterSpacing: 1.0,
                     ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    const Text(
-                      'Stay safe by taking simple precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated, avoiding crowds, cleaning your hands more often, and coughing into a bent elbow or tissue. Check local advice where you live and work.',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        height: 1.2,
-                        color: Colors.black, letterSpacing: 1.0,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             )
           ],
