@@ -70,7 +70,7 @@ class PreventionScreen extends StatelessWidget {
                   const Text(
                     'Stay safe by taking simple precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated, avoiding crowds, cleaning your hands more often, and coughing into a bent elbow or tissue. Check local advice where you live and work.',
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 16.0,
                       height: 1.2,
                       color: Colors.black, letterSpacing: 1.0,
                     ),

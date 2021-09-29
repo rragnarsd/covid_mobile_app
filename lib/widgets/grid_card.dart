@@ -29,7 +29,7 @@ class GridCard extends StatelessWidget {
               children: [
                 Icon(
                   icon,
-                  size: 40.0,
+                  size: 30.0,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -38,7 +38,7 @@ class GridCard extends StatelessWidget {
                   hedText,
                   style: const TextStyle(
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const SizedBox(

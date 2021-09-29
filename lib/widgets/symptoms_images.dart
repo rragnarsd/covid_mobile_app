@@ -17,7 +17,6 @@ class SymptomsImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       child:
       GridView.count(
         crossAxisCount: 2,
@@ -27,10 +26,15 @@ class SymptomsImages extends StatelessWidget {
         children: List.generate(
           covidImages.length,
               (index) => InkWell(
-            child: Image.asset(
-              '${covidImages[index]}',
-              fit: BoxFit.cover,
-              height: 300.0,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 0.5, color: Colors.blue)
+              ),
+              child: Image.asset(
+                '${covidImages[index]}',
+                fit: BoxFit.cover,
+                height: 300.0,
+              ),
             ),
             onTap: () {
               Navigator.push(

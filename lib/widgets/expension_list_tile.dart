@@ -22,13 +22,13 @@ class ExpansionTileList extends StatelessWidget {
       ),
       title: Text(
         hedText,
-        style: const TextStyle(fontSize: 20.0),
+        style: const TextStyle(fontSize: 18.0),
       ),
       leading: FaIcon(icon),
       children: [
         Text(
           subText,
-          style: const TextStyle(fontSize: 18.0, height: 1.2),
+          style: const TextStyle(fontSize: 16.0, height: 1.2),
         )
       ],
     );
