@@ -40,6 +40,8 @@ dependencies:
   flutter_svg: ^0.22.0
   youtube_player_flutter: ^8.0.0
   simple_animations: ^4.0.0
+  animations: ^2.0.1
+  lottie: ^1.2.1
 
 dev_dependencies:
   flutter_test:

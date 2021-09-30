@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_app/animations/fade_animation.dart';
 import 'package:flutter_covid_app/screens/countries_screen.dart';
 import 'package:flutter_covid_app/screens/mask_screen.dart';
 import 'package:flutter_covid_app/screens/prevention_screen.dart';
