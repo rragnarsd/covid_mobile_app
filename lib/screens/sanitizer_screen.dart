@@ -1,13 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
 import 'package:flutter_covid_app/widgets/sanitizer_images.dart';
 import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SanitizerScreen extends StatelessWidget {
-  SanitizerScreen({Key? key}) : super(key: key);
+class SanitizerScreen extends StatefulWidget {
+  const SanitizerScreen({Key? key}) : super(key: key);
 
+  @override
+  State<SanitizerScreen> createState() => _SanitizerScreenState();
+}
+
+class _SanitizerScreenState extends State<SanitizerScreen> {
   List covidImages = [
     'assets/sanitize1.png',
     'assets/sanitize2.png',
@@ -49,71 +56,33 @@ class SanitizerScreen extends StatelessWidget {
                     ),
                     const Text(
                       'WHO recommends cleaning your hands with soap and water whenever possible, as often as possible (and always when your hands are visibly soiled). Hand sanitizer can be used in addition to this or when washing isn\'t an option.',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        letterSpacing: 1.0,
-                        height: 1.2,
-                      ),
+                      style: kTextStyleMainText
                     ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(
-                                  height: 20.0,
-                                ),
-                                const Text(
-                                  'Use sanitizer when...',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w500,
-                                    letterSpacing: 1.0,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 5.0,
-                                ),
-                                RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text: String.fromCharCode(0x2022),
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                        ),
-                                        children: const [
-                                          TextSpan(
-                                            text: ' No access to water and soap'
-                                                '\n',
-                                            style: TextStyle(
-                                              fontSize: 16.0,
-                                              letterSpacing: 1.0,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ]),
-                                    TextSpan(
-                                        text: String.fromCharCode(0x2022),
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                        ),
-                                        children: const [
-                                          TextSpan(
-                                            text: ' For extra protection' '\n',
-                                            style: TextStyle(
-                                              fontSize: 16.0,
-                                              letterSpacing: 1.0,
-                                            ),
-                                          ),
-                                        ]),
-                                  ]),
-                                )
-                              ],
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Text(
+                          'Use sanitizer when...',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1.0,
                           ),
-                        ]),
+                        ),
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        RichTextReusable(
+                          textOne: ' No access to water and soap',
+                          textTwo:
+                          ' Before and after eating',
+                          textThree: ' For extra protection',
+                        ),
+                      ],
+                    ),
                     const Divider(color: Color(0xff66D7D1), thickness: 1.0),
                     const SizedBox(
                       height: 10.0,

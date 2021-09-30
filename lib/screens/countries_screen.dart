@@ -5,7 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_covid_app/models/covid_countries.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
 import 'package:http/http.dart' as http;
 
@@ -52,17 +54,10 @@ class _CountriesScreenState extends State<CountriesScreen> {
                   itemCount: countryList.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(5.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 1.0,
-                              blurRadius: 4,
-                              offset: const Offset(2, 2),
-                            ),
-                          ]),
+                      decoration: kBoxDecorationShadow.copyWith(
+                        color: Colors.grey.shade50,
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
                       margin: const EdgeInsets.only(bottom: 15.0),
                       child: ListTile(
                         contentPadding: const EdgeInsets.all(0.0),
@@ -128,23 +123,19 @@ class _CountriesScreenState extends State<CountriesScreen> {
                                               RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                      const TextSpan(
-                                                        text: 'Country: ',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color:
-                                                                Colors.black),
-                                                      ),
                                                       TextSpan(
-                                                        text: countryList[index]
-                                                            .country,
-                                                        style: const TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.black),
-                                                      )
+                                                          text: 'Country: ',
+                                                          style: kTextStyleSmall
+                                                              .copyWith(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600)),
+                                                      TextSpan(
+                                                          text:
+                                                              countryList[index]
+                                                                  .country,
+                                                          style:
+                                                              kTextStyleSmall)
                                                     ]),
                                               ),
                                               const SizedBox(
@@ -153,24 +144,62 @@ class _CountriesScreenState extends State<CountriesScreen> {
                                               RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                      const TextSpan(
-                                                        text: 'Total cases: ',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color:
-                                                                Colors.black),
-                                                      ),
                                                       TextSpan(
-                                                        text: countryList[index]
-                                                            .cases
-                                                            .toString(),
-                                                        style: const TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.black),
-                                                      )
+                                                          text: 'Total cases: ',
+                                                          style: kTextStyleSmall
+                                                              .copyWith(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600)),
+                                                      TextSpan(
+                                                          text:
+                                                              countryList[index]
+                                                                  .cases
+                                                                  .toString(),
+                                                          style:
+                                                              kTextStyleSmall)
+                                                    ]),
+                                              ),
+                                              const SizedBox(
+                                                height: 10.0,
+                                              ),
+                                              RichText(
+                                                text: TextSpan(children: <
+                                                    TextSpan>[
+                                                  TextSpan(
+                                                      text: 'Total deaths: ',
+                                                      style: kTextStyleSmall
+                                                          .copyWith(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600)),
+                                                  TextSpan(
+                                                      text: countryList[index]
+                                                          .deaths
+                                                          .toString(),
+                                                      style: kTextStyleSmall)
+                                                ]),
+                                              ),
+                                              const SizedBox(
+                                                height: 10.0,
+                                              ),
+                                              RichText(
+                                                text: TextSpan(
+                                                    children: <TextSpan>[
+                                                      TextSpan(
+                                                          text: 'Today cases: ',
+                                                          style: kTextStyleSmall
+                                                              .copyWith(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600)),
+                                                      TextSpan(
+                                                          text:
+                                                              countryList[index]
+                                                                  .todayCases
+                                                                  .toString(),
+                                                          style:
+                                                              kTextStyleSmall)
                                                     ]),
                                               ),
                                               const SizedBox(
@@ -179,76 +208,20 @@ class _CountriesScreenState extends State<CountriesScreen> {
                                               RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                      const TextSpan(
-                                                        text: 'Total deaths: ',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color:
-                                                                Colors.black),
-                                                      ),
                                                       TextSpan(
-                                                        text: countryList[index]
-                                                            .deaths
-                                                            .toString(),
-                                                        style: const TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.black),
-                                                      )
-                                                    ]),
-                                              ),
-                                              const SizedBox(
-                                                height: 10.0,
-                                              ),
-                                              RichText(
-                                                text: TextSpan(
-                                                    children: <TextSpan>[
-                                                      const TextSpan(
-                                                        text: 'Today cases: ',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color:
-                                                                Colors.black),
-                                                      ),
+                                                          text: 'Recovered: ',
+                                                          style: kTextStyleSmall
+                                                              .copyWith(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600)),
                                                       TextSpan(
-                                                        text: countryList[index]
-                                                            .todayCases
-                                                            .toString(),
-                                                        style: const TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.black),
-                                                      )
-                                                    ]),
-                                              ),
-                                              const SizedBox(
-                                                height: 10.0,
-                                              ),
-                                              RichText(
-                                                text: TextSpan(
-                                                    children: <TextSpan>[
-                                                      const TextSpan(
-                                                        text: 'Recovered: ',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color:
-                                                                Colors.black),
-                                                      ),
-                                                      TextSpan(
-                                                        text: countryList[index]
-                                                            .recovered
-                                                            .toString(),
-                                                        style: const TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.black),
-                                                      )
+                                                          text:
+                                                              countryList[index]
+                                                                  .recovered
+                                                                  .toString(),
+                                                          style:
+                                                              kTextStyleSmall)
                                                     ]),
                                               ),
                                               const SizedBox(

@@ -5,7 +5,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class Video extends StatefulWidget {
   final String url;
 
-  Video({Key? key, required this.url}) : super(key: key);
+  const Video({Key? key, required this.url}) : super(key: key);
 
   @override
   _VideoState createState() => _VideoState();

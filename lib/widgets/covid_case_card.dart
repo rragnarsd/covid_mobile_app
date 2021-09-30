@@ -1,27 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 
-class CovidCaseCard extends StatelessWidget {
+class CovidCaseCard extends StatefulWidget {
   final String text;
   final String numbers;
 
-  CovidCaseCard({Key? key, required this.text, required this.numbers})
+  const CovidCaseCard({Key? key, required this.text, required this.numbers})
       : super(key: key);
 
+  @override
+  State<CovidCaseCard> createState() => _CovidCaseCardState();
+}
+
+class _CovidCaseCardState extends State<CovidCaseCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-      child: Container(decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ]
-      ),
+      child: Container(decoration: kBoxDecorationShadow,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5.0),
           child: Container(
@@ -35,7 +32,7 @@ class CovidCaseCard extends StatelessWidget {
                   const Icon(Icons.coronavirus, color: Color(0xffFC7753) ,),
                   const SizedBox(height: 10.0,),
                   Text(
-                    numbers,
+                    widget.numbers,
                     style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w500,
@@ -45,7 +42,7 @@ class CovidCaseCard extends StatelessWidget {
                     height: 10.0,
                   ),
                   Text(
-                    text,
+                    widget.text,
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.grey.shade500

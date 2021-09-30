@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/animations/fade_animation.dart';
 import 'package:flutter_covid_app/screens/countries_screen.dart';
 import 'package:flutter_covid_app/screens/mask_screen.dart';
 import 'package:flutter_covid_app/screens/prevention_screen.dart';
@@ -11,10 +12,14 @@ import 'package:flutter_covid_app/widgets/grid_card.dart';
 import 'package:flutter_covid_app/widgets/requirement_circles.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-/*  List colors = [Colors.teal, Colors.yellow, Colors.blue, Colors.green];*/
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   List colors = [const Color(0xffFC7753), const Color(0xff66D7D1), const Color(0xffF2EFEA), const Color(0xffDBD56E)];
 
   @override
@@ -170,7 +175,7 @@ class HomePage extends StatelessWidget {
                       function: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => SanitizerScreen(),
+                            builder: (context) => const SanitizerScreen(),
                           ),
                         );
                       },

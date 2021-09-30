@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
 import 'package:flutter_covid_app/widgets/training_videos.dart';
 import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 class MaskScreen extends StatelessWidget {
   const MaskScreen({Key? key}) : super(key: key);
@@ -36,62 +37,53 @@ class MaskScreen extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
-                  const SizedBox(height: 10.0,),
-                  const Text(
-                    'Make wearing a mask a normal part of being around other people. The appropriate use, storage and cleaning or disposal of masks are essential to make them as effective as possible.',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0,
-                      height: 1.2,
-                    ),
-                  ),
                   const SizedBox(
-                    height: 20.0,
+                    height: 10.0,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text:
-                                    ' Wash hand before and after touching the mask.'
-                                    '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text:
-                                    ' Make sure it covers both your nose, mouth and chin. '
-                                    '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                      ],
-                    ),
+                  const Text(
+                      'Make wearing a mask a normal part of being around other people. The appropriate use, storage and cleaning or disposal of masks are essential to make them as effective as possible.',
+                      style: kTextStyleMainText,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'How to use mask...',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      RichTextReusable(
+                        textOne:
+                            ' Wash hand before and after touching the mask.',
+                        textTwo:
+                            ' Make sure it covers both your nose, mouth and chin.',
+                        textThree: ' Dispose medical mask in a trash bin.',
+                      ),
+                    ],
                   ),
                   const Divider(color: Color(0xff66D7D1), thickness: 1.0),
-                  ViewMoreRowBtn(text: 'Training Videos', function: () => _launchURL()),
+                  ViewMoreRowBtn(
+                    text: 'Training Videos',
+                    function: () => _launchURL(),
+                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const TrainingVideos(textOne: 'How to wear a medical mask', urlOne: 'https://www.youtube.com/watch?v=adB8RW4I3o4', textTwo: 'How to wear a fabric mask', urlTwo: 'https://www.youtube.com/watch?v=ciUniZGD4tY',),
+                  const TrainingVideos(
+                    textOne: 'How to wear a medical mask',
+                    urlOne: 'https://www.youtube.com/watch?v=adB8RW4I3o4',
+                    textTwo: 'How to wear a fabric mask',
+                    urlTwo: 'https://www.youtube.com/watch?v=ciUniZGD4tY',
+                  ),
                 ],
               ),
             )
@@ -101,5 +93,3 @@ class MaskScreen extends StatelessWidget {
     );
   }
 }
-
-

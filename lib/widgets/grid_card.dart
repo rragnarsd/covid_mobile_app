@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 
 class GridCard extends StatelessWidget {
   final Color color;
@@ -15,16 +16,7 @@ class GridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ]
-      ),
+      decoration: kBoxDecorationShadow,
       child: InkWell(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5.0),

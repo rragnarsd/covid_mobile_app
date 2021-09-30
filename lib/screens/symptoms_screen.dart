@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
 import 'package:flutter_covid_app/widgets/symptoms_images.dart';
 import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,22 +30,18 @@ class SymptomsScreen extends StatelessWidget {
               child: Column(children: [
                 const Text(
                   'COVID-19 affects different people in  different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    letterSpacing: 1.0,
-                    height: 1.2,
-                  ),
+                  style: kTextStyleMainText,
                 ),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
+                    children: const [
+                      SizedBox(
                         height: 20.0,
                       ),
-                      const Text(
+                      Text(
                         'Common Symptoms',
                         style: TextStyle(
                           fontSize: 18.0,
@@ -51,65 +49,23 @@ class SymptomsScreen extends StatelessWidget {
                           letterSpacing: 1.0,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 5.0,
                       ),
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: String.fromCharCode(0x2022),
-                              style: const TextStyle(
-                                color: Colors.black,
-                              ),
-                              children: const [
-                                TextSpan(
-                                  text: ' Fever' '\n',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    letterSpacing: 1.0,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ]),
-                          TextSpan(
-                              text: String.fromCharCode(0x2022),
-                              style: const TextStyle(
-                                color: Colors.black,
-                              ),
-                              children: const [
-                                TextSpan(
-                                  text: ' Dry cough' '\n',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    letterSpacing: 1.0,
-                                  ),
-                                ),
-                              ]),
-                          TextSpan(
-                              text: String.fromCharCode(0x2022),
-                              style: const TextStyle(
-                                color: Colors.black,
-                              ),
-                              children: const [
-                                TextSpan(
-                                  text: ' Tiredness' '\n',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    letterSpacing: 1.0,
-                                  ),
-                                ),
-                              ]),
-                        ]),
-                      )
+                      RichTextReusable(
+                        textOne: ' Fever',
+                        textTwo: ' Dry cough',
+                        textThree: ' Tiredness',
+                      ),
                     ],
                   ),
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
+                      children: const [
+                        SizedBox(
                           height: 20.0,
                         ),
-                        const Text(
+                        Text(
                           'Serious Symptoms',
                           style: TextStyle(
                             fontSize: 18.0,
@@ -117,57 +73,14 @@ class SymptomsScreen extends StatelessWidget {
                             letterSpacing: 1.0,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 5.0,
                         ),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                  text: String.fromCharCode(0x2022),
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                  children: const [
-                                    TextSpan(
-                                      text: ' Breathing problems' '\n',
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        letterSpacing: 1.0,
-                                      ),
-                                    ),
-                                  ]),
-                              TextSpan(
-                                  text: String.fromCharCode(0x2022),
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                  children: const [
-                                    TextSpan(
-                                      text: ' Confusion' '\n',
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        letterSpacing: 1.0,
-                                      ),
-                                    ),
-                                  ]),
-                              TextSpan(
-                                  text: String.fromCharCode(0x2022),
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                  children: const [
-                                    TextSpan(
-                                      text: ' Chest pain' '\n',
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        letterSpacing: 1.0,
-                                      ),
-                                    ),
-                                  ]),
-                            ],
-                          ),
-                        )
+                        RichTextReusable(
+                          textOne: ' Breathing problems',
+                          textTwo: ' Confusion',
+                          textThree: ' Chest pain',
+                        ),
                       ])
                 ]),
                 const SizedBox(
@@ -184,12 +97,7 @@ class SymptomsScreen extends StatelessWidget {
                         'Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility. People with mild symptoms who are otherwise healthy should manage their symptoms at home.',
                         overflow: TextOverflow.ellipsis,
                         maxLines: 7,
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.black,
-                          letterSpacing: 1.0,
-                          height: 1.2,
-                        ),
+                        style: kTextStyleMainText,
                       ),
                     ),
                   ],
@@ -203,7 +111,7 @@ class SymptomsScreen extends StatelessWidget {
                 ),
                 Column(children: [
                   ViewMoreRowBtn(text: 'Advice from WHO', function: () => _launchURL()),
-                  SymptomsImages(),
+                  const SymptomsImages(),
                 ]),
               ]),
             )

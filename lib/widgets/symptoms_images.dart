@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/screens/full_screen_hero.dart';
 
 
-class SymptomsImages extends StatelessWidget {
-  SymptomsImages({Key? key}) : super(key: key);
+class SymptomsImages extends StatefulWidget {
+  const SymptomsImages({Key? key}) : super(key: key);
 
+  @override
+  State<SymptomsImages> createState() => _SymptomsImagesState();
+}
+
+class _SymptomsImagesState extends State<SymptomsImages> {
   List covidImages = [
     'assets/sick1.png',
     'assets/sick2.png',

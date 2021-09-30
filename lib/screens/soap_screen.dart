@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
 import 'package:flutter_covid_app/widgets/training_videos.dart';
 import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 class SoapScreen extends StatelessWidget {
   const SoapScreen({Key? key}) : super(key: key);
@@ -45,12 +46,8 @@ class SoapScreen extends StatelessWidget {
                     height: 10.0,
                   ),
                   const Text(
-                    'Handwashing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0,
-                      height: 1.2,
-                    ),
+                      'Handwashing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.',
+                      style: kTextStyleMainText,
                   ),
                   const SizedBox(
                     height: 20.0,
@@ -67,58 +64,15 @@ class SoapScreen extends StatelessWidget {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' After using the restroom' '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' After leaving a public place' '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' After coughing, or sneezing'
-                                    '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                      ],
-                    ),
+                  const RichTextReusable(
+                    textOne: ' After using the restroom',
+                    textTwo: ' After leaving a public place',
+                    textThree: ' After coughing, or sneezing',
                   ),
                   const Divider(color: Color(0xff66D7D1), thickness: 1.0),
                   ViewMoreRowBtn(
-                      text: 'Training Videos', function: () => _launchURL(),
+                    text: 'Training Videos',
+                    function: () => _launchURL(),
                   ),
                   const SizedBox(
                     height: 20.0,
@@ -138,3 +92,5 @@ class SoapScreen extends StatelessWidget {
     );
   }
 }
+
+
