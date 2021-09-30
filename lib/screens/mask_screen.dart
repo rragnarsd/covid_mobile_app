@@ -11,9 +11,7 @@ class MaskScreen extends StatelessWidget {
   void _launchURL() async {
     const _url =
         'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks';
-    await canLaunch(_url)
-        ? await launch(_url)
-        : throw 'Could not launch $_url';
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 
   @override
@@ -49,7 +47,7 @@ class MaskScreen extends StatelessWidget {
                             children: const [
                               TextSpan(
                                 text:
-                                ' Clean your hands before you put your mask on, as well as before and after you take it off, and after you touch it at any time. '
+                                    ' Clean your hands before you put your mask on, as well as before and after you take it off, and after you touch it at any time. '
                                     '\n',
                                 style: TextStyle(
                                   fontSize: 16.0,
@@ -65,7 +63,7 @@ class MaskScreen extends StatelessWidget {
                             children: const [
                               TextSpan(
                                 text:
-                                ' Make sure it covers both your nose, mouth and chin. '
+                                    ' Make sure it covers both your nose, mouth and chin. '
                                     '\n',
                                 style: TextStyle(
                                   fontSize: 16.0,
@@ -81,7 +79,7 @@ class MaskScreen extends StatelessWidget {
                             children: const [
                               TextSpan(
                                 text:
-                                ' When you take off a mask, store it in a clean plastic bag, and every day either wash it if it’s a fabric mask, or dispose of a medical mask in a trash bin.'
+                                    ' When you take off a mask, store it in a clean plastic bag, and every day either wash it if it’s a fabric mask, or dispose of a medical mask in a trash bin.'
                                     '\n',
                                 style: TextStyle(
                                   fontSize: 16.0,
@@ -106,10 +104,7 @@ class MaskScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Divider(
-                    color: Colors.blue,
-                    thickness: 1.0,
-                  ),
+                  const Divider(color: Color(0xff66D7D1), thickness: 1.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -127,8 +122,7 @@ class MaskScreen extends StatelessWidget {
                         child: const Text(
                           'View More',
                           style: TextStyle(
-                            fontSize: 18.0,
-                          ),
+                              fontSize: 18.0, color: Color(0xffFC7753)),
                         ),
                       ),
                     ],

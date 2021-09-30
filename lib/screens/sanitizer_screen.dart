@@ -100,7 +100,7 @@ class SanitizerScreen extends StatelessWidget {
                         ),
                       ),
                     ]),
-                const Divider(color: Colors.blue, thickness: 1.0),
+                const Divider(color: Color(0xff66D7D1), thickness: 1.0),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -123,6 +123,7 @@ class SanitizerScreen extends StatelessWidget {
                           'View More',
                           style: TextStyle(
                             fontSize: 18.0,
+                              color: Color(0xffFC7753)
                           ),
                         ),
                       ),

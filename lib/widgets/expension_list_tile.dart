@@ -34,6 +34,10 @@ class ExpansionTileList extends StatelessWidget {
         ]
       ),
       child: ExpansionTile(
+        iconColor: Color(0xffFC7753),
+        collapsedIconColor: Color(0xff403D58),
+        collapsedTextColor: Color(0xff403D58),
+        textColor: Color(0xffFC7753),
         childrenPadding: const EdgeInsets.only(
           top: 0.0,
           bottom: 15.0,

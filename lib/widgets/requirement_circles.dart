@@ -22,6 +22,7 @@ class RequirementCircles extends StatelessWidget {
           child: FaIcon(
             icon,
             size: 25.0,
+            color: Color(0xff403D58),
           ),
         ),
         onPressed: () {

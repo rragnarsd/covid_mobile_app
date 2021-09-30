@@ -20,11 +20,10 @@ class AppHeader extends StatelessWidget {
           gradient: const LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Colors.blue, Colors.blueAccent],
+            colors: [Color(0xff403D58), Color(0xff666379)],
           ),
           image: DecorationImage(
               image: AssetImage(image)
-            /*image: AssetImage('assets/vector/virus-test.png'),*/
           ),
         ),
       ),

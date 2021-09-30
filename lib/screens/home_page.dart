@@ -14,7 +14,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  List colors = [Colors.teal, Colors.yellow, Colors.blue, Colors.green];
+/*  List colors = [Colors.teal, Colors.yellow, Colors.blue, Colors.green];*/
+  List colors = [Color(0xffFC7753), Color(0xff66D7D1), Color(0xffF2EFEA), Color(0xffDBD56E)];
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +108,7 @@ class HomePage extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 30.0, right: 30.0),
-              child: Divider(color: Colors.teal, thickness: 1.0),
+              child: Divider(color: Color(0xff66D7D1), thickness: 1.0),
             ),
             Column(
               children: [
@@ -149,12 +150,6 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                    ),
-                    RequirementCircles(
-                      icon: FontAwesomeIcons.bandAid,
-                      color: colors[2],
-                      text: 'Gloves',
-                      function: () {},
                     ),
                     RequirementCircles(
                       icon: FontAwesomeIcons.soap,

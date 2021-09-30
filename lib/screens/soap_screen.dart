@@ -140,10 +140,7 @@ class SoapScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Divider(
-                    color: Colors.blue,
-                    thickness: 1.0,
-                  ),
+                  const Divider(color: Color(0xff66D7D1), thickness: 1.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -162,6 +159,7 @@ class SoapScreen extends StatelessWidget {
                           'View More',
                           style: TextStyle(
                             fontSize: 18.0,
+                              color: Color(0xffFC7753)
                           ),
                         ),
                       ),

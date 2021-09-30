@@ -32,7 +32,7 @@ class CovidCaseCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Icon(Icons.coronavirus),
+                  const Icon(Icons.coronavirus, color: Color(0xffFC7753) ,),
                   const SizedBox(height: 10.0,),
                   Text(
                     numbers,

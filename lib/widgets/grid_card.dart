@@ -9,7 +9,7 @@ class GridCard extends StatelessWidget {
   final Function function;
 
   const GridCard({
-    Key? key, required this.color, required this.hedText, required this.subHed, required this.icon, required this.function
+    Key? key, required this.color, required this.hedText, required this.subHed, required this.icon,  required this.function
   }) : super(key: key,);
 
   @override
@@ -41,6 +41,7 @@ class GridCard extends StatelessWidget {
                   Icon(
                     icon,
                     size: 30.0,
+                    color: Color(0xff403D58),
                   ),
                   const SizedBox(
                     height: 10.0,

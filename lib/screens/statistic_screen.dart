@@ -69,6 +69,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
                     'View More',
                     style: TextStyle(
                       fontSize: 18.0,
+                      color: Color(0xffFC7753),
                     ),
                   ),
                 ),
