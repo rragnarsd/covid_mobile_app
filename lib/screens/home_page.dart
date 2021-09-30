@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/screens/countries_screen.dart';
 import 'package:flutter_covid_app/screens/mask_screen.dart';
 import 'package:flutter_covid_app/screens/prevention_screen.dart';
+import 'package:flutter_covid_app/screens/sanitizer_screen.dart';
+import 'package:flutter_covid_app/screens/soap_screen.dart';
 import 'package:flutter_covid_app/screens/statistic_screen.dart';
 import 'package:flutter_covid_app/screens/symptoms_screen.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
@@ -158,13 +160,25 @@ class HomePage extends StatelessWidget {
                       icon: FontAwesomeIcons.soap,
                       color: colors[1],
                       text: 'Soap',
-                      function: () {},
+                      function: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SoapScreen(),
+                          ),
+                        );
+                      },
                     ),
                     RequirementCircles(
                       icon: FontAwesomeIcons.hospital,
                       color: colors[0],
                       text: 'Sanitizers',
-                      function: () {},
+                      function: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SanitizerScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

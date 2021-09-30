@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Video extends StatefulWidget {
-  final url;
+  final String url;
 
-  Video({this.url});
+  Video({Key? key, required this.url}) : super(key: key);
 
   @override
   _VideoState createState() => _VideoState();

@@ -1,5 +1,7 @@
 # flutter_covid_app
 
+<a href='https://www.freepik.com/vectors/medical'>Medical vector created by freepik - www.freepik.com</a>
+
 A new Flutter application.
 
 ## Getting Started
