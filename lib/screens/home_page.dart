@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
 /*  List colors = [Colors.teal, Colors.yellow, Colors.blue, Colors.green];*/
-  List colors = [Color(0xffFC7753), Color(0xff66D7D1), Color(0xffF2EFEA), Color(0xffDBD56E)];
+  List colors = [const Color(0xffFC7753), const Color(0xff66D7D1), const Color(0xffF2EFEA), const Color(0xffDBD56E)];
 
   @override
   Widget build(BuildContext context) {

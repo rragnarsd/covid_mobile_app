@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/training_videos.dart';
+import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../youtube_video.dart';
 
 class SoapScreen extends StatelessWidget {
   const SoapScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     void _launchURL() async {
       const _url =
           'https://www.youtube.com/results?search_query=handwashing+video';
@@ -19,7 +19,6 @@ class SoapScreen extends StatelessWidget {
           ? await launch(_url)
           : throw 'Could not launch $_url';
     }
-
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,7 +32,7 @@ class SoapScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 const Text(
+                  const Text(
                     'Hand-washing and hygiene',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -42,7 +41,9 @@ class SoapScreen extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
-                  const SizedBox(height: 10.0,),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
                   const Text(
                     'Handwashing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.',
                     style: TextStyle(
@@ -51,7 +52,9 @@ class SoapScreen extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
-                  const SizedBox(height: 20.0,),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
                   const Text(
                     'It’s especially important to wash: ',
                     style: TextStyle(
@@ -61,38 +64,12 @@ class SoapScreen extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
-                  const SizedBox(height: 10.0,),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' Before eating or preparing food' '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' Before touching your face' '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
                         TextSpan(
                             text: String.fromCharCode(0x2022),
                             style: const TextStyle(
@@ -128,8 +105,7 @@ class SoapScreen extends StatelessWidget {
                             ),
                             children: const [
                               TextSpan(
-                                text:
-                                    ' After blowing your nose, coughing, or sneezing'
+                                text: ' After coughing, or sneezing'
                                     '\n',
                                 style: TextStyle(
                                   fontSize: 16.0,
@@ -141,67 +117,17 @@ class SoapScreen extends StatelessWidget {
                     ),
                   ),
                   const Divider(color: Color(0xff66D7D1), thickness: 1.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Training Videos',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          _launchURL();
-                        },
-                        child: const Text(
-                          'View More',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                              color: Color(0xffFC7753)
-                          ),
-                        ),
-                      ),
-                    ],
+                  ViewMoreRowBtn(
+                      text: 'Training Videos', function: () => _launchURL(),
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'How to...WHO technique',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Video(
-                        url: 'https://www.youtube.com/watch?v=IisgnbMfKvI',
-                      ),
-                      const SizedBox(
-                        height: 20.0,
-                      ),
-                      const Text(
-                        'How to handwash with soap and water ',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Video(
-                        url: 'https://www.youtube.com/watch?v=3PmVJQUCm4E',
-                      ),
-                      const SizedBox(
-                        height: 50.0,
-                      ),
-                    ],
+                  const TrainingVideos(
+                    textOne: 'How to...WHO technique',
+                    urlOne: 'https://www.youtube.com/watch?v=IisgnbMfKvI',
+                    textTwo: 'How to handwash with soap and water',
+                    urlTwo: 'https://www.youtube.com/watch?v=3PmVJQUCm4E',
                   ),
                 ],
               ),

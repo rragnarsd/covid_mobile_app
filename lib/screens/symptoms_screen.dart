@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
 import 'package:flutter_covid_app/widgets/symptoms_images.dart';
+import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SymptomsScreen extends StatelessWidget {
@@ -201,30 +202,7 @@ class SymptomsScreen extends StatelessWidget {
                   height: 10.0,
                 ),
                 Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Advice from WHO',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          _launchURL();
-                        },
-                        child: const Text(
-                          'View More',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Color(0xffFC7753),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  ViewMoreRowBtn(text: 'Advice from WHO', function: () => _launchURL()),
                   SymptomsImages(),
                 ]),
               ]),

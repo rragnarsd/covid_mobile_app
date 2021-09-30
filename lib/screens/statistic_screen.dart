@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/models/covid_worldwide.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
 import 'package:flutter_covid_app/widgets/covid_case_card.dart';
+import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -34,13 +35,9 @@ class _StatisticScreenState extends State<StatisticScreen> {
     _allCovidCases = fetchCovid();
   }
 
-
   void _launchURL() async {
-    const _url =
-        'https://www.worldometers.info/coronavirus/';
-    await canLaunch(_url)
-        ? await launch(_url)
-        : throw 'Could not launch $_url';
+    const _url = 'https://www.worldometers.info/coronavirus/';
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 
   @override
@@ -48,33 +45,12 @@ class _StatisticScreenState extends State<StatisticScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(children: [
-         const AppHeader(image: 'assets/vector/stay-safe.png'),
+          const AppHeader(image: 'assets/vector/stay-safe.png'),
           Padding(
-            padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'World Updates',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    _launchURL();
-                  },
-                  child: const Text(
-                    'View More',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Color(0xffFC7753),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            padding:
+                const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
+            child: ViewMoreRowBtn(
+                text: 'World Updates', function: () => _launchURL()),
           ),
           FutureBuilder<CovidWorldWide>(
             future: _allCovidCases,
@@ -125,7 +101,10 @@ class _StatisticScreenState extends State<StatisticScreen> {
                         numbers: '${snapshot.data!.deaths}',
                       ),
                     ],
-                  ), const SizedBox(height: 50.0,)
+                  ),
+                  const SizedBox(
+                    height: 50.0,
+                  )
                 ]);
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');

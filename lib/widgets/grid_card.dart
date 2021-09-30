@@ -41,7 +41,7 @@ class GridCard extends StatelessWidget {
                   Icon(
                     icon,
                     size: 30.0,
-                    color: Color(0xff403D58),
+                    color: const Color(0xff403D58),
                   ),
                   const SizedBox(
                     height: 10.0,

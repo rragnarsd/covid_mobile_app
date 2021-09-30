@@ -13,7 +13,6 @@ class FullScreenHero extends StatelessWidget {
       body: SingleChildScrollView(
         child: InkWell(
           child: SizedBox(
-            /*width: MediaQuery.of(context).size.width,*/
             height: MediaQuery.of(context).size.height,
             child: Hero(
               tag: 'HeroImg',

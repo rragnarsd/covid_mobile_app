@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/widgets/training_videos.dart';
+import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../youtube_video.dart';
 
 class MaskScreen extends StatelessWidget {
   const MaskScreen({Key? key}) : super(key: key);
@@ -24,7 +25,18 @@ class MaskScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const Text(
+                    'Guideline to face masks',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.w500,
+                      height: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 10.0,),
                   const Text(
                     'Make wearing a mask a normal part of being around other people. The appropriate use, storage and cleaning or disposal of masks are essential to make them as effective as possible.',
                     style: TextStyle(
@@ -47,7 +59,7 @@ class MaskScreen extends StatelessWidget {
                             children: const [
                               TextSpan(
                                 text:
-                                    ' Clean your hands before you put your mask on, as well as before and after you take it off, and after you touch it at any time. '
+                                    ' Wash hand before and after touching the mask.'
                                     '\n',
                                 style: TextStyle(
                                   fontSize: 16.0,
@@ -71,100 +83,15 @@ class MaskScreen extends StatelessWidget {
                                 ),
                               ),
                             ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text:
-                                    ' When you take off a mask, store it in a clean plastic bag, and every day either wash it if it’s a fabric mask, or dispose of a medical mask in a trash bin.'
-                                    '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
-                        TextSpan(
-                            text: String.fromCharCode(0x2022),
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                            children: const [
-                              TextSpan(
-                                text: ' Don’t use masks with valves.' '\n',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                            ]),
                       ],
                     ),
                   ),
                   const Divider(color: Color(0xff66D7D1), thickness: 1.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Training Videos',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          _launchURL();
-                        },
-                        child: const Text(
-                          'View More',
-                          style: TextStyle(
-                              fontSize: 18.0, color: Color(0xffFC7753)),
-                        ),
-                      ),
-                    ],
-                  ),
+                  ViewMoreRowBtn(text: 'Training Videos', function: () => _launchURL()),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'How to wear a medical mask',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Video(
-                        url: 'https://www.youtube.com/watch?v=adB8RW4I3o4',
-                      ),
-                      const SizedBox(
-                        height: 20.0,
-                      ),
-                      const Text(
-                        'How to wear a fabric mask',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Video(
-                        url: 'https://www.youtube.com/watch?v=ciUniZGD4tY',
-                      ),
-                      const SizedBox(
-                        height: 50.0,
-                      ),
-                    ],
-                  ),
+                  const TrainingVideos(textOne: 'How to wear a medical mask', urlOne: 'https://www.youtube.com/watch?v=adB8RW4I3o4', textTwo: 'How to wear a fabric mask', urlTwo: 'https://www.youtube.com/watch?v=ciUniZGD4tY',),
                 ],
               ),
             )
@@ -174,3 +101,5 @@ class MaskScreen extends StatelessWidget {
     );
   }
 }
+
+
