@@ -8,9 +8,9 @@ class RichTextReusable extends StatelessWidget {
   final String textThree;
   const RichTextReusable(
       {Key? key,
-        required this.textOne,
-        required this.textTwo,
-        required this.textThree})
+      required this.textOne,
+      required this.textTwo,
+      required this.textThree})
       : super(key: key);
 
   @override
@@ -20,33 +20,30 @@ class RichTextReusable extends StatelessWidget {
         children: [
           TextSpan(
               text: String.fromCharCode(0x2022),
-              style: const TextStyle(
-                color: Colors.black,
-              ),
+              style: kTextStyleReusable,
               children: [
                 TextSpan(
-                    text: '$textOne' '\n',
-                    style: kTextStyleMainText),
+                  text: '$textOne' '\n',
+                  style: kTextStyleMainText,
+                ),
               ]),
           TextSpan(
               text: String.fromCharCode(0x2022),
-              style: const TextStyle(
-                color: Colors.black,
-              ),
+              style: kTextStyleReusable,
               children: [
                 TextSpan(
-                    text: '$textTwo' '\n',
-                    style: kTextStyleMainText),
+                  text: '$textTwo' '\n',
+                  style: kTextStyleMainText,
+                ),
               ]),
           TextSpan(
               text: String.fromCharCode(0x2022),
-              style: const TextStyle(
-                color: Colors.black,
-              ),
+              style:kTextStyleReusable,
               children: [
                 TextSpan(
-                    text: '$textThree' '\n',
-                    style: kTextStyleMainText),
+                  text: '$textThree' '\n',
+                  style: kTextStyleMainText,
+                ),
               ]),
         ],
       ),

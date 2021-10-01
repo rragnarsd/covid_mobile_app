@@ -44,18 +44,13 @@ class _SanitizerScreenState extends State<SanitizerScreen> {
                   children: [
                     const Text(
                       'Sanitizing and hygiene',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                        fontWeight: FontWeight.w500,
-                        height: 1.2,
-                      ),
+                      style: kTextStyleMainHeading
                     ),
                     const SizedBox(
                       height: 10.0,
                     ),
                     const Text(
-                      'WHO recommends cleaning your hands with soap and water whenever possible, as often as possible (and always when your hands are visibly soiled). Hand sanitizer can be used in addition to this or when washing isn\'t an option.',
+                      'WHO recommends cleaning your hands with soap and water whenever possible, as often as possible. Hand sanitizer can be used in addition to this or when washing isn\'t an option.',
                       style: kTextStyleMainText
                     ),
                     Column(
@@ -66,11 +61,7 @@ class _SanitizerScreenState extends State<SanitizerScreen> {
                         ),
                         Text(
                           'Use sanitizer when...',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1.0,
-                          ),
+                          style: kTextStyleMainSubHeading
                         ),
                         SizedBox(
                           height: 5.0,
@@ -83,7 +74,7 @@ class _SanitizerScreenState extends State<SanitizerScreen> {
                         ),
                       ],
                     ),
-                    const Divider(color: Color(0xff66D7D1), thickness: 1.0),
+                    Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
                     const SizedBox(
                       height: 10.0,
                     ),
@@ -96,6 +87,7 @@ class _SanitizerScreenState extends State<SanitizerScreen> {
                         SanitizerImages(covidImages: covidImages)
                       ],
                     ),
+                    const SizedBox(height: 40.0,),
                   ]),
             )
           ],

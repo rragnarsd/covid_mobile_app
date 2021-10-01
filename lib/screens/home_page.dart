@@ -110,9 +110,9 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 40.0,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 30.0, right: 30.0),
-              child: Divider(color: Color(0xff66D7D1), thickness: 1.0),
+              child:  Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
             ),
             Column(
               children: [

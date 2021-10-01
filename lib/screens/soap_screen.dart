@@ -35,31 +35,21 @@ class SoapScreen extends StatelessWidget {
                 children: [
                   const Text(
                     'Hand-washing and hygiene',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      letterSpacing: 1.0,
-                      fontWeight: FontWeight.w500,
-                      height: 1.2,
-                    ),
+                    style: kTextStyleMainHeading,
                   ),
                   const SizedBox(
                     height: 10.0,
                   ),
                   const Text(
-                      'Handwashing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.',
-                      style: kTextStyleMainText,
+                    'Handwashing is one of the best ways to protect yourself and your family from getting sick.',
+                    style: kTextStyleMainText,
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
                   const Text(
                     'It’s especially important to wash: ',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      letterSpacing: 1.0,
-                      fontWeight: FontWeight.w500,
-                      height: 1.2,
-                    ),
+                    style: kTextStyleMainSubHeading
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -69,7 +59,7 @@ class SoapScreen extends StatelessWidget {
                     textTwo: ' After leaving a public place',
                     textThree: ' After coughing, or sneezing',
                   ),
-                  const Divider(color: Color(0xff66D7D1), thickness: 1.0),
+                  Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
                   ViewMoreRowBtn(
                     text: 'Training Videos',
                     function: () => _launchURL(),
@@ -92,5 +82,3 @@ class SoapScreen extends StatelessWidget {
     );
   }
 }
-
-

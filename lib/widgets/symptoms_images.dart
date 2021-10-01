@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/screens/full_screen_hero.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 
 
 class SymptomsImages extends StatefulWidget {
@@ -32,17 +33,14 @@ class _SymptomsImagesState extends State<SymptomsImages> {
           covidImages.length,
               (index) => InkWell(
             child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(width: 0.5, color: Colors.blue),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 10,
-                      offset: const Offset(3, 0),
-                    ),
-                  ]
-              ),
+              decoration: kBoxDecorationShadow.copyWith(border: Border.all(width: 0.5, color: Colors.blue),  boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                  offset: const Offset(3, 0),
+                ),
+              ]),
               child: Image.asset(
                 '${covidImages[index]}',
                 fit: BoxFit.cover,

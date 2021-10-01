@@ -50,7 +50,8 @@ class _StatisticScreenState extends State<StatisticScreen> {
             padding:
                 const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
             child: ViewMoreRowBtn(
-                text: 'World Updates', function: () => _launchURL()),
+                text: 'World Updates', function: () => _launchURL(),
+            ),
           ),
           FutureBuilder<CovidWorldWide>(
             future: _allCovidCases,

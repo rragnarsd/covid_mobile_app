@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RequirementCircles extends StatelessWidget {
@@ -25,11 +27,8 @@ class RequirementCircles extends StatelessWidget {
           fillColor: color,
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: FaIcon(
-              icon,
-              size: 25.0,
-              color: const Color(0xff403D58),
-            ),
+            child: FaIcon(icon,
+                size: 25.0, color: Theme.of(context).iconTheme.color),
           ),
           onPressed: () {
             function();
@@ -39,7 +38,7 @@ class RequirementCircles extends StatelessWidget {
       ),
       Text(
         text,
-        style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),
+        style: kTextStyleSmall.copyWith(fontWeight: FontWeight.w500)
       )
     ]);
   }

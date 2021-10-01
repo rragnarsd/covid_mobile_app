@@ -1,7 +1,7 @@
 import 'package:flutter_covid_app/models/onboard_model.dart';
 
 List<OnBoarding> items = [
-  OnBoarding(url: 'https://assets5.lottiefiles.com/private_files/lf30_oGbdoA.json', title: 'Random Text Here', content: 'More Random Stuff'),
-  OnBoarding(url: 'https://assets5.lottiefiles.com/private_files/lf30_yQtj4O.json', title: 'Random Text Here', content: 'More Random Stuff'),
-  OnBoarding(url: 'https://assets5.lottiefiles.com/private_files/lf30_Rq4Htd.json', title: 'Random Text Here', content: 'More Random Stuff'),
+  OnBoarding(url: 'assets/animations/hands.json', title: 'Wash Your Hands', content: 'Regular handwashing is one of the best ways to remove germs, avoid getting sick, and prevent the spread of germs to others.'),
+  OnBoarding(url: 'assets/animations/mask.json', title: 'Use Masks', content: 'Properly fitted masks can help prevent the spread of the virus from the person wearing the mask to others.'),
+  OnBoarding(url: 'assets/animations/sanitize.json', title: 'Random Text Here', content: 'If soap and water are not readily available, you can use an alcohol-based hand sanitizer that contains at least 60% alcohol. '),
 ];

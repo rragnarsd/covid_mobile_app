@@ -43,11 +43,8 @@ class SymptomsScreen extends StatelessWidget {
                       ),
                       Text(
                         'Common Symptoms',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.0,
-                        ),
+                        //Ath?
+                        style: kTextStyleMainSubHeading
                       ),
                       SizedBox(
                         height: 5.0,
@@ -67,11 +64,8 @@ class SymptomsScreen extends StatelessWidget {
                         ),
                         Text(
                           'Serious Symptoms',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1.0,
-                          ),
+                            //Ath?
+                          style: kTextStyleMainSubHeading
                         ),
                         SizedBox(
                           height: 5.0,
@@ -86,7 +80,7 @@ class SymptomsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10.0,
                 ),
-                const Divider(color: Color(0xff66D7D1), thickness: 1.0),
+                Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -94,7 +88,7 @@ class SymptomsScreen extends StatelessWidget {
                   children: const [
                     Expanded(
                       child: Text(
-                        'Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility. People with mild symptoms who are otherwise healthy should manage their symptoms at home.',
+                        'Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility.',
                         overflow: TextOverflow.ellipsis,
                         maxLines: 7,
                         style: kTextStyleMainText,
@@ -105,13 +99,14 @@ class SymptomsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20.0,
                 ),
-                const Divider(color: Color(0xff66D7D1), thickness: 1.0),
+                Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
                 const SizedBox(
                   height: 10.0,
                 ),
                 Column(children: [
                   ViewMoreRowBtn(text: 'Advice from WHO', function: () => _launchURL()),
                   const SymptomsImages(),
+                  const SizedBox(height: 40.0,),
                 ]),
               ]),
             )

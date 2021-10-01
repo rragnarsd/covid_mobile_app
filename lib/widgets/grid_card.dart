@@ -33,24 +33,21 @@ class GridCard extends StatelessWidget {
                   Icon(
                     icon,
                     size: 30.0,
-                    color: const Color(0xff403D58),
+                    color: Theme.of(context).iconTheme.color,
                   ),
                   const SizedBox(
                     height: 10.0,
                   ),
                   Text(
                     hedText,
-                    style: const TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: kTextStyleMainHeading
                   ),
                   const SizedBox(
                     height: 5.0,
                   ),
                   Text(
                     subHed,
-                    style: const TextStyle(fontSize: 16.0),
+                    style: kTextStyleSmall
                   ),
                 ],
               ),

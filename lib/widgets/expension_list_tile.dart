@@ -26,12 +26,13 @@ class ExpansionTileList extends StatelessWidget {
       ),
       decoration: kBoxDecorationShadow.copyWith(
         color: Colors.white,
-        borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(5.0),
+        ),
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: ExpansionTile(
         iconColor: const Color(0xffFC7753),
-        collapsedIconColor: const Color(0xff403D58),
+        collapsedIconColor: Theme.of(context).iconTheme.color,
         collapsedTextColor: const Color(0xff403D58),
         textColor: const Color(0xffFC7753),
         childrenPadding: const EdgeInsets.only(

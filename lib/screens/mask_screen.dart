@@ -30,12 +30,7 @@ class MaskScreen extends StatelessWidget {
                 children: [
                   const Text(
                     'Guideline to face masks',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      letterSpacing: 1.0,
-                      fontWeight: FontWeight.w500,
-                      height: 1.2,
-                    ),
+                    style: kTextStyleMainHeading,
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -52,25 +47,21 @@ class MaskScreen extends StatelessWidget {
                       ),
                       Text(
                         'How to use mask...',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.0,
-                        ),
+                        style: kTextStyleMainSubHeading
                       ),
                       SizedBox(
                         height: 5.0,
                       ),
                       RichTextReusable(
                         textOne:
-                            ' Wash hand before and after touching the mask.',
+                            ' Wash hand before and after.',
                         textTwo:
-                            ' Make sure it covers both your nose, mouth and chin.',
+                            ' Make sure it covers both nose and mouth.',
                         textThree: ' Dispose medical mask in a trash bin.',
                       ),
                     ],
                   ),
-                  const Divider(color: Color(0xff66D7D1), thickness: 1.0),
+                  Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
                   ViewMoreRowBtn(
                     text: 'Training Videos',
                     function: () => _launchURL(),
