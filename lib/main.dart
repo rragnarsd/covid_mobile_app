@@ -11,19 +11,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Color(0xffFC7753),
-            primary: Color(0xffFC7753),
-          ),
-          iconTheme: const IconThemeData(
-            color: Color(0xff403D58),
-          ),
-         dividerTheme: DividerThemeData(color: Color(0xff66D7D1),),
+      color: Theme.of(context).backgroundColor,
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        splashColor: Color(0xffDBD56E),
+        cardColor: const Color(0xffF2EFEA),
+        shadowColor: Color(0xff66D7D1),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: const Color(0xffFC7753),
+          primary: const Color(0xffFC7753),
+          background: const Color(0xffF2EFEA),
         ),
-        home: const OnBoardingScreen(),
+        iconTheme: const IconThemeData(
+          color: Color(0xff403D58),
+        ),
+        dividerTheme: const DividerThemeData(
+          color: Color(0xff66D7D1),
+        ),
+      ),
+      home: const OnBoardingScreen(),
     );
   }
 }

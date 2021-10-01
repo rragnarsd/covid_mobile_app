@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 
 import '../youtube_video.dart';
 
@@ -20,9 +21,7 @@ class TrainingVideos extends StatelessWidget {
       children: [
         Text(
           textOne,
-          style: const TextStyle(
-            fontSize: 18.0,
-          ),
+          style: kTextStyleMedium
         ),
         const SizedBox(
           height: 10.0,
@@ -35,9 +34,7 @@ class TrainingVideos extends StatelessWidget {
         ),
         Text(
           textTwo,
-          style: const TextStyle(
-            fontSize: 18.0,
-          ),
+          style: kTextStyleMedium
         ),
         const SizedBox(
           height: 10.0,

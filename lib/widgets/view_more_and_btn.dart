@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid_app/utils/constants.dart';
 
 class ViewMoreRowBtn extends StatelessWidget {
   final String text;
@@ -12,21 +13,13 @@ class ViewMoreRowBtn extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          text,
-          style: const TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        Text(text, style: kTextStyleMainHeading),
         TextButton(
           onPressed: () => function(),
-          child: const Text(
-            'View More',
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Color(0xffFC7753),
-            ),
+          child: Text('View More',
+              style: kTextStyleMedium.copyWith(
+                color: Color(0xffFC7753),
+              ),
           ),
         ),
       ],

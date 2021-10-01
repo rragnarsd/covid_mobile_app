@@ -19,16 +19,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List colors = [const Color(0xffFC7753), const Color(0xff66D7D1), const Color(0xffF2EFEA), const Color(0xffDBD56E)];
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-         const AppHeader(image: 'assets/vector/vaccine.png'),
+            const AppHeader(image: 'assets/vector/vaccine.png'),
             const Text(
               'Prevent COVID-19',
               style: TextStyle(fontSize: 25.0),
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 GridCard(
                   icon: Icons.sick,
-                  color: colors[0],
+                  color: Theme.of(context).colorScheme.secondary,
                   hedText: 'Symptoms',
                   subHed: 'Identify the risk of infection',
                   function: () => {
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 GridCard(
                   icon: Icons.coronavirus,
-                  color: colors[1],
+                  color: Theme.of(context).shadowColor,
                   hedText: 'Prevention',
                   subHed: 'Avoid the risk of infection',
                   function: () => {
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 GridCard(
                   icon: Icons.report,
-                  color: colors[2],
+                  color: Theme.of(context).cardColor,
                   hedText: 'Statistics',
                   subHed: 'Data related to the disease',
                   function: () => {
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 GridCard(
                   icon: Icons.language,
-                  color: colors[3],
+                  color: Theme.of(context).splashColor,
                   hedText: 'Countries',
                   subHed: 'Infected countries by COVID-19',
                   function: () => {
@@ -112,7 +113,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 30.0, right: 30.0),
-              child:  Divider(color: Theme.of(context).dividerTheme.color, thickness: 1.0),
+              child: Divider(
+                  color: Theme.of(context).dividerTheme.color, thickness: 1.0),
             ),
             Column(
               children: [
@@ -145,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     RequirementCircles(
                       icon: FontAwesomeIcons.mask,
-                      color: colors[3],
+                      color: Theme.of(context).splashColor,
                       text: 'Mask',
                       function: () {
                         Navigator.of(context).push(
@@ -157,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     RequirementCircles(
                       icon: FontAwesomeIcons.soap,
-                      color: colors[1],
+                      color: Theme.of(context).shadowColor,
                       text: 'Soap',
                       function: () {
                         Navigator.of(context).push(
@@ -169,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     RequirementCircles(
                       icon: FontAwesomeIcons.hospital,
-                      color: colors[0],
+                      color: Theme.of(context).colorScheme.secondary,
                       text: 'Sanitizers',
                       function: () {
                         Navigator.of(context).push(

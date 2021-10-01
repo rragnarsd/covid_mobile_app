@@ -28,7 +28,8 @@ class RequirementCircles extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: FaIcon(icon,
-                size: 25.0, color: Theme.of(context).iconTheme.color),
+                size: 25.0, color: Theme.of(context).iconTheme.color,
+            ),
           ),
           onPressed: () {
             function();

@@ -61,7 +61,7 @@ class _CountriesScreenState extends State<CountriesScreen> {
                       margin: const EdgeInsets.only(bottom: 15.0),
                       child: ListTile(
                         contentPadding: const EdgeInsets.all(0.0),
-                        title: Text(countryList[index].country),
+                        title: Text(countryList[index].country, style: kTextStyleMainText,),
                         leading: SizedBox(
                           width: 120.0,
                           child: ClipRRect(
