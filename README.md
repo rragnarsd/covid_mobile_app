@@ -2,7 +2,8 @@
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg?style=flat-square)](https://github.com/Codelessly/ResponsiveFramework)
 
 ## About
-- Application that loads covid related data from the API https://disease.sh/. 
+- Covid tracker which shows worldwide live data of confirmed, recovered, death cases etc. 
+- User can also select any country and fetch covid related data from the API https://dsease.sh/.
 
 ## Packages
 - Http - https://pub.dev/packages/http
