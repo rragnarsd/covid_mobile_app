@@ -1,8 +1,26 @@
-# flutter_covid_app
+# Flutter Covid App
 
-<a href='https://www.freepik.com/vectors/medical'>Medical vector created by freepik - www.freepik.com</a>
+## About
+- Application that loads covid related data from the API https://disease.sh/. 
 
-A new Flutter application.
+## Packages
+- Http - https://pub.dev/packages/http
+- Youtube_player_flutter - https://pub.dev/packages/youtube_player_flutter
+- Lottie - https://pub.dev/packages/lottie
+- Url_launcher - https://pub.dev/packages/url_launcher
+- Font Awesome - https://pub.dev/packages/font_awesome_flutter
+
+ ## I got inspired by these designs
+- https://dribbble.com/shots/11033913-Coronavirus-COVID-19-Tracker-App
+- https://dribbble.com/tmrwstudio/projects/1912319-Hearthy-Medical-UI-Kit
+
+## Design
+- Vector images are from https://sketchvalley.com/
+- Covid posters from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public
+
+## The color pallette that I used
+![colorPallette](https://user-images.githubusercontent.com/44742460/135619610-db06dddb-6136-44f0-9df5-84721d61035e.PNG)
+
 
 ## Getting Started
 
