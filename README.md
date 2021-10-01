@@ -1,4 +1,5 @@
 # Flutter Covid App
+[![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg?style=flat-square)](https://github.com/Codelessly/ResponsiveFramework)
 
 ## About
 - Application that loads covid related data from the API https://disease.sh/. 
@@ -9,6 +10,10 @@
 - Lottie - https://pub.dev/packages/lottie
 - Url_launcher - https://pub.dev/packages/url_launcher
 - Font Awesome - https://pub.dev/packages/font_awesome_flutter
+- Responsive_framework - https://pub.dev/packages/responsive_framework
+
+## New Widgets that I tried
+- ExpansionTile 
 
  ## I got inspired by these designs
 - https://dribbble.com/shots/11033913-Coronavirus-COVID-19-Tracker-App
@@ -20,6 +25,11 @@
 
 ## The color pallette that I used
 ![colorPallette](https://user-images.githubusercontent.com/44742460/135619610-db06dddb-6136-44f0-9df5-84721d61035e.PNG)
+
+## Live preview
+
+https://user-images.githubusercontent.com/44742460/135640827-94d88bf9-e4c3-4d24-9d43-ae17c63f6459.mp4
+
 
 
 ## Getting Started
