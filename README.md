@@ -16,6 +16,7 @@
 
 ## New Widgets/Stuff that I tried
 - ExpansionTile 
+- BackdropFilter
 - Barrel files (exporting files instead of importing them many times)
 
  ## I got inspired by these designs
