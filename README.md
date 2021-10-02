@@ -4,6 +4,7 @@
 ## About
 - Covid tracker which shows worldwide live data of confirmed, recovered, death cases etc. 
 - User can also select any country and fetch covid related data from the API https://dsease.sh/.
+- The app is just for learning purposes.
 
 ## Packages
 - Http - https://pub.dev/packages/http
@@ -13,8 +14,9 @@
 - Font Awesome - https://pub.dev/packages/font_awesome_flutter
 - Responsive_framework - https://pub.dev/packages/responsive_framework
 
-## New Widgets that I tried
+## New Widgets/Stuff that I tried
 - ExpansionTile 
+- Barrel files (exporting files instead of importing them many times)
 
  ## I got inspired by these designs
 - https://dribbble.com/shots/11033913-Coronavirus-COVID-19-Tracker-App
@@ -26,6 +28,10 @@
 
 ## The color pallette that I used
 ![colorPallette](https://user-images.githubusercontent.com/44742460/135619610-db06dddb-6136-44f0-9df5-84721d61035e.PNG)
+
+## Screenshot
+![Draft 1 - Moviiez (Copy)](https://user-images.githubusercontent.com/44742460/135717879-6b57ee13-e574-4527-901e-1903fd3c433d.png)
+
 
 ## Live preview
 
