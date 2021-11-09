@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/models/covid_worldwide.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
-import 'package:flutter_covid_app/widgets/covid_case_card.dart';
-import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -113,9 +111,9 @@ class _StatisticScreenState extends State<StatisticScreen> {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(
-                      color: Color(0xffEEEEEE),
+                      color: Theme.of(context).colorScheme.secondary,
                     )
                   ],
                 ),

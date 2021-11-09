@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_app/screens/full_screen_hero.dart';
+import 'package:flutter_covid_app/screens/screens.dart';
 import 'package:flutter_covid_app/utils/constants.dart';
-
 
 class SymptomsImages extends StatefulWidget {
   const SymptomsImages({Key? key}) : super(key: key);
@@ -23,24 +22,25 @@ class _SymptomsImagesState extends State<SymptomsImages> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      child:
-      GridView.count(
+      child: GridView.count(
         crossAxisCount: 2,
         crossAxisSpacing: 20.0,
         mainAxisSpacing: 20.0,
         shrinkWrap: true,
         children: List.generate(
           covidImages.length,
-              (index) => InkWell(
+          (index) => InkWell(
             child: Container(
-              decoration: kBoxDecorationShadow.copyWith(border: Border.all(width: 0.5, color: Colors.blue),  boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 10,
-                  offset: const Offset(3, 0),
-                ),
-              ]),
+              decoration: kBoxDecorationShadow.copyWith(
+                  border: Border.all(width: 0.5, color: Colors.blue),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 10,
+                      offset: const Offset(3, 0),
+                    ),
+                  ]),
               child: Image.asset(
                 '${covidImages[index]}',
                 fit: BoxFit.cover,

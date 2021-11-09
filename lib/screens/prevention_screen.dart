@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
-import 'package:flutter_covid_app/widgets/expension_list_tile.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PreventionScreen extends StatelessWidget {

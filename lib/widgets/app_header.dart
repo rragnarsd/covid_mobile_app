@@ -6,7 +6,8 @@ import 'clipper_widget.dart';
 class AppHeader extends StatelessWidget {
   final String image;
   const AppHeader({
-    Key? key, required this.image,
+    Key? key,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -14,7 +15,7 @@ class AppHeader extends StatelessWidget {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        height: 250.0,
+        height: 230.0,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
@@ -22,9 +23,7 @@ class AppHeader extends StatelessWidget {
             end: Alignment.bottomLeft,
             colors: [Color(0xff403D58), Color(0xff666379)],
           ),
-          image: DecorationImage(
-              image: AssetImage(image)
-          ),
+          image: DecorationImage(image: AssetImage(image)),
         ),
       ),
     );

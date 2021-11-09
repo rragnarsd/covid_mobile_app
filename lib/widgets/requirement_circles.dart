@@ -39,7 +39,8 @@ class RequirementCircles extends StatelessWidget {
       ),
       Text(
         text,
-        style: kTextStyleSmall.copyWith(fontWeight: FontWeight.w500)
+        style: kTextStyleSmall.copyWith(fontWeight: FontWeight.w500,
+        )
       )
     ]);
   }

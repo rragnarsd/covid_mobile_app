@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_covid_app/screens/home_page.dart';
-import 'package:flutter_covid_app/utils/onboard_list.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_covid_app/screens/screens.dart';
+import 'package:flutter_covid_app/utils/utils.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -29,6 +29,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   void nextPage() {
+    if (currentIndex == items.length - 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
+    }
     _controller.nextPage(
         duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
   }
@@ -55,20 +63,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           width: MediaQuery.of(context).size.width / 1.5),
                       Text(
                         items[index].title,
-                        style: const TextStyle(
-                          fontSize: 35.0,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: kTextStyleLarge,
                       ),
                       const SizedBox(
                         height: 20.0,
                       ),
                       Text(
                         items[index].content,
-                        style: const TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.grey,
-                        ),
+                        style: kTextStyleSmall.copyWith(fontSize: 20.0, color: Colors.grey),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -93,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Container(
             height: 50.0,
             width: double.infinity,
-            margin: EdgeInsets.only(bottom: 10.0),
+            margin: const EdgeInsets.only(bottom: 10.0),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: const Color(0xffFC7753),
@@ -102,19 +104,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   currentIndex == items.length - 1 ? 'Continue' : 'Next',
                   style: const TextStyle(fontSize: 20.0),
                 ),
-                onPressed: () {
-                  if (currentIndex == items.length - 1) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  }
-                  nextPage();
-                }),
+                onPressed: () => nextPage()
           )
-        ]),
+          )],
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/screens/onboarding/onboard.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +12,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      color: Theme.of(context).backgroundColor,
+      builder: (context, child) => ResponsiveWrapper.builder(
+        child,
+        maxWidth: 1200,
+        minWidth: 450,
+        defaultScale: true,
+        breakpoints: [
+          const ResponsiveBreakpoint.resize(450, name: MOBILE),
+          const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+        ],
+      ),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Covid App',
       theme: ThemeData(
-        splashColor: Color(0xffDBD56E),
+        splashColor: const Color(0xffDBD56E),
         cardColor: const Color(0xffF2EFEA),
-        shadowColor: Color(0xff66D7D1),
+        shadowColor: const Color(0xff66D7D1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: const Color(0xffFC7753),
           primary: const Color(0xffFC7753),

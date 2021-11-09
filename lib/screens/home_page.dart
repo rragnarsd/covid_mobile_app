@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_app/screens/countries_screen.dart';
-import 'package:flutter_covid_app/screens/mask_screen.dart';
-import 'package:flutter_covid_app/screens/prevention_screen.dart';
-import 'package:flutter_covid_app/screens/sanitizer_screen.dart';
-import 'package:flutter_covid_app/screens/soap_screen.dart';
-import 'package:flutter_covid_app/screens/statistic_screen.dart';
-import 'package:flutter_covid_app/screens/symptoms_screen.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
-import 'package:flutter_covid_app/widgets/grid_card.dart';
-import 'package:flutter_covid_app/widgets/requirement_circles.dart';
+import 'package:flutter_covid_app/screens/screens.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +16,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,9 +103,10 @@ class _HomePageState extends State<HomePage> {
               height: 40.0,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 30.0, right: 30.0),
+              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
               child: Divider(
-                  color: Theme.of(context).dividerTheme.color, thickness: 1.0),
+                  color: Theme.of(context).dividerTheme.color, thickness: 1.0,
+              ),
             ),
             Column(
               children: [

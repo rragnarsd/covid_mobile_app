@@ -16,11 +16,11 @@ class CovidWorldWide {
 
   factory CovidWorldWide.fromJson(Map<String, dynamic> json) {
     return CovidWorldWide(
-        recovered: json['recovered'],
-        cases: json['cases'],
-        todayCases: json['todayCases'],
-        deaths: json['deaths'],
-    active: json['active'],
+      recovered: json['recovered'],
+      cases: json['cases'],
+      todayCases: json['todayCases'],
+      deaths: json['deaths'],
+      active: json['active'],
       tests: json['tests'],
     );
   }

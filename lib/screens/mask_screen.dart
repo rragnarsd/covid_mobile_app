@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_app/utils/constants.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
-import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
-import 'package:flutter_covid_app/widgets/training_videos.dart';
-import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
+import 'package:flutter_covid_app/utils/utils.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MaskScreen extends StatelessWidget {

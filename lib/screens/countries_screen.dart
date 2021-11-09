@@ -7,9 +7,10 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_covid_app/models/covid_countries.dart';
-import 'package:flutter_covid_app/utils/constants.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
+import 'package:flutter_covid_app/utils/utils.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
+
 
 class CountriesScreen extends StatefulWidget {
   const CountriesScreen({Key? key}) : super(key: key);

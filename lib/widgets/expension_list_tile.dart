@@ -31,7 +31,7 @@ class ExpansionTileList extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: ExpansionTile(
-        iconColor: const Color(0xffFC7753),
+        iconColor: Theme.of(context).colorScheme.secondary,
         collapsedIconColor: Theme.of(context).iconTheme.color,
         collapsedTextColor: const Color(0xff403D58),
         textColor: const Color(0xffFC7753),

@@ -18,7 +18,7 @@ class ViewMoreRowBtn extends StatelessWidget {
           onPressed: () => function(),
           child: Text('View More',
               style: kTextStyleMedium.copyWith(
-                color: Color(0xffFC7753),
+                color: const Color(0xffFC7753),
               ),
           ),
         ),

@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_covid_app/utils/constants.dart';
-import 'package:flutter_covid_app/widgets/app_header.dart';
-import 'package:flutter_covid_app/widgets/rich_text_reusable.dart';
-import 'package:flutter_covid_app/widgets/training_videos.dart';
-import 'package:flutter_covid_app/widgets/view_more_and_btn.dart';
+import 'package:flutter_covid_app/widgets/widgets.dart';
+import 'package:flutter_covid_app/utils/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SoapScreen extends StatelessWidget {
@@ -68,9 +65,9 @@ class SoapScreen extends StatelessWidget {
                     height: 20.0,
                   ),
                   const TrainingVideos(
-                    textOne: 'How to...WHO technique',
+                    textOne: 'Wash hands with WHO',
                     urlOne: 'https://www.youtube.com/watch?v=IisgnbMfKvI',
-                    textTwo: 'How to handwash with soap and water',
+                    textTwo: 'Handwash with soap and water',
                     urlTwo: 'https://www.youtube.com/watch?v=3PmVJQUCm4E',
                   ),
                 ],

@@ -10,6 +10,11 @@ const kTextStyleMedium = TextStyle(
   color: Color(0xff171717),
 );
 
+const kTextStyleLarge = TextStyle(
+  fontSize: 35.0,
+  fontWeight: FontWeight.w500,
+);
+
 const kTextStyleMainHeading = TextStyle(
   fontSize: 20.0,
   fontWeight: FontWeight.w500,
@@ -51,3 +56,4 @@ const kTextStyleNumbers = TextStyle(
 const kTextStyleReusable = TextStyle(
   color: Color(0xff171717),
 );
+
