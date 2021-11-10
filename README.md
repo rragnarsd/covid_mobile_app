@@ -38,7 +38,8 @@
 
 https://user-images.githubusercontent.com/44742460/135640827-94d88bf9-e4c3-4d24-9d43-ae17c63f6459.mp4
 
-
+## Contributors Changes
+08/11/2021 - ***Subhojeet Sahoo***: Implemented a search feature to the app.
 
 ## Getting Started
 
